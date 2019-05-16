@@ -11,7 +11,9 @@ namespace XamarinTestApp4
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            //MainPage = new EmpListPage();
+            MainPage = new NavigationPage(new EmpListPage());
         }
 
         protected override void OnStart()

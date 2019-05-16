@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinTestApp4.EmpListPage">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnParseData" Grid.Row="1" Margin="10" Text="사원 데이터 파싱" Clicked="BtnParseData_Clicked"/>
+            <!-- ActivityIndicator는 UI 업데이트 대기 상태에서 사용자에게 보여주는 화면임.-->
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="True" IsVisible="false" Color="Gray" Grid.Row="2"/>
+            <ListView x:Name="listEmp" Grid.Row="2" HorizontalOptions="FillAndExpand"
+                      HasUnevenRows="True" ItemSelected="ListEmp_ItemSelected">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HorizontalOptions="FillAndExpand" Padding="15">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding empNo}" Grid.Row="0" Grid.Column="0" TextColor="Green" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding eName}" Grid.Row="0" Grid.Column="1" TextColor="Red" HorizontalTextAlignment="Center"/>
+
+                                <BoxView HeightRequest="1" Margin="0,5,5,0" BackgroundColor="Gray" Grid.Row="1" Grid.ColumnSpan="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</ContentPage>

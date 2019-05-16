@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinTestApp4"
+             xmlns:viewModel="clr-namespace:XamarinTestApp4.ViewModel;assembly=XamarinTestApp4"
+             x:Class="XamarinTestApp4.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModel:EmpViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Orientation="Vertical" Margin="10" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+        <Entry x:Name="Ename" Text="{Binding Ename}"/>
+        <Label x:Name="Message" Text="{Binding Message}"/>
+        <Button x:Name="Introduce" Text="Introduce Yourself" Command="{Binding Introduce}"/>
+    </StackLayout>
+</ContentPage>
